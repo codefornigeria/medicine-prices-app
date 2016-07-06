@@ -1,7 +1,13 @@
 angular.module('app.controllers', ['ngAnimate'])
   
-.controller('appCtrl', function($scope, $state, $stateParams) {
+.controller('appCtrl', function($scope, $state, $stateParams, $location, $anchorScroll) {
     
+	$scope.scrollTo = function(id) {
+		$location.hash(id);
+	    console.log($location.hash());
+	    $anchorScroll();
+	};
+
 	$scope.search = function() {
         
     }
