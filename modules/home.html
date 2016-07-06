@@ -27,23 +27,24 @@
 <div class="min500 gradient" id="main">
 	<div class="ghost-line" ng-hide="two"></div>
 	<div class="card z-index4" ng-hide="one">
+	<form name="priceForm">
 		<div class="body">
 			<h3 class="text-center">First, tell us how much you pay.</h3>
-			<p>I pay <input type="number" name="" placeholder="&#8358 3,000"></p>
-			<p>for 
-				<select>
-					<option value="">choose medicine</option>
-					<option>Paracetamol</option>
-					<option>Morphine</option>
-				</select>
-			</p>
+				<p>I pay <input type="number" ng-model="price" placeholder="&#8358 3,000" required></p>
+				<p>for 
+					<select ng-model="medicine" required>
+						<option value="">choose medicine</option>
+						<option>Paracetamol</option>
+						<option>Morphine</option>
+					</select>
+				</p>
 		</div>
 		<div class="footer">
-			<button class="btn-success" ng-click="step1()">
+			<button class="btn btn-success" ng-click="step1()" ng-disabled="priceForm.$invalid">
 				NEXT
 			</button>
 		</div>
-		
+	</form>	
 	</div>
 	<div class="card z-index3" ng-hide="two">
 		<div class="body">

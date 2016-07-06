@@ -54,12 +54,23 @@ a {
   font-weight: 900;
   color: #0B5D97;
 }
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .hero .header {
+    font-size: 24px;
+  }
+}
 .hero .sub-header {
   font-size: 24px;
   font-weight: 500;
   color: #000000;
 }
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .hero .sub-header {
+    font-size: 18px;
+  }
+}
 .gradient {
+  background-image: linear-gradient(165deg, #4885ed 0%, #90caf9 100%);
   padding-top: 150px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -93,12 +104,22 @@ a {
   left: 0;
   right: 0;
 }
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .card {
+    width: 80%;
+  }
+}
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .card h3 {
+    font-size: 18px;
+  }
+}
 .card .body {
   height: 260px;
   width: 100%;
   padding: 50px;
   font-size: 18px;
-  background: #f7f7f7;
+  background: #ffffff;
 }
 .card .body input,
 .card .body select {
