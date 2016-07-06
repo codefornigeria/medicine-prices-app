@@ -16,7 +16,7 @@
 	<div class="col-md-10 col-md-offset-1 p-t-lg text-center">
 		<p class="header">How much does your medicine cost?</p>
 		<p class="col-md-10 col-md-offset-1 sub-header p-t-sm">
-			Does the National Health Insurance Scheme pay hospitals enough for life saving medicines? Let’s find out.
+			Is NHIS paying hospitals enough for life saving medicines? Let’s find out.
 		</p>
 	</div>
 	<div class="col-md-8 col-md-offset-2 text-center m-t-xxl action animated animate-slow pulse infinite">
@@ -30,14 +30,15 @@
 	<form name="priceForm">
 		<div class="body">
 			<h3 class="text-center">First, tell us how much you pay.</h3>
-				<p>I pay  &#8358<input type="number" ng-model="price" placeholder="3,000" required></p>
-				<p>for 
+			<p>I buy 
 					<select ng-model="medicine" required>
 						<option value="">choose medicine</option>
 						<option>Paracetamol</option>
 						<option>Morphine</option>
 					</select>
 				</p>
+				<p>for  &#8358<input type="number" ng-model="price" placeholder="3,000" required></p>
+				
 		</div>
 		<div class="footer">
 			<button class="btn btn-success" ng-click="step1()" ng-disabled="priceForm.$invalid">
