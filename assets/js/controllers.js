@@ -3,8 +3,7 @@ angular.module('app.controllers', ['ngAnimate'])
 .controller('appCtrl', function($scope, $state, $stateParams, $location, $anchorScroll) {
     
 	$scope.scrollTo = function(id) {
-		$location.hash(id);
-	    console.log($location.hash());
+		// $location.hash(id);
 	    $anchorScroll();
 	};
 
