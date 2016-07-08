@@ -23,7 +23,14 @@
 }
 
 .no-padder {
-	padding: 0;
+	padding: 0 !important;
+}
+
+.text-ellipsis {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .p-t-sm {

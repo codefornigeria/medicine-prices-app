@@ -1,14 +1,20 @@
 angular.module('app.controllers', ['ngAnimate'])
   
-.controller('appCtrl', function($scope, $state, $stateParams, $location, $anchorScroll) {
+.controller('appCtrl', function($scope, $state, $stateParams, Restangular, $location, $anchorScroll) {
+    Restangular.all('medicine').getList().then(function(response){
+        $scope.medicines = response;
+    })
+
+
     
 	$scope.scrollTo = function(id) {
 		// $location.hash(id);
 	    $anchorScroll();
 	};
 
-	$scope.search = function() {
-        
+	$scope.select = function(med) {
+        console.log(med)
+        $scope.medList = med.name;
     }
 
     $scope.step1 = function() {

@@ -9,7 +9,8 @@ angular.module('app', [
 
 .config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider',
   function($stateProvider, $urlRouterProvider, RestangularProvider) {
-      
+    RestangularProvider.setBaseUrl('api/');
+
       $stateProvider
       .state('home', {
         url: '',
