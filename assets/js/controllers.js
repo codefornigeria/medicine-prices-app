@@ -13,7 +13,6 @@ angular.module('app.controllers', ['ngAnimate'])
     }
     
 	$scope.scrollTo = function(id) {
-        console.log(id)
 		$location.hash(id);
 	    $anchorScroll();
 	};
@@ -33,8 +32,8 @@ angular.module('app.controllers', ['ngAnimate'])
     }
 
     $scope.step2 = function(select) {
-        $scope.judgement =  ($scope.credentials.price / select.price * 300) * 100;
-        console.log($scope.judgement)
+        $scope.answer =  ($scope.credentials.price / select.price * 300) * 100;
+        $scope.judgement = Math.round($scope.answer);
     	$scope.two = true;
         $scope.personNode = true;
     }
