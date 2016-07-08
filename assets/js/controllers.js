@@ -2,7 +2,10 @@ angular.module('app.controllers', ['ngAnimate'])
   
 .controller('appCtrl', function($scope, $state, $stateParams, Restangular, $location, $anchorScroll) {
     Restangular.all('medicine').getList().then(function(response){
-        $scope.medicines = response;
+        $scope.medicines = _.uniq(response, function(o){
+         return o.name
+        });
+        console.log($scope.medicines);
     })
 
     $scope.textChanged = function() {
