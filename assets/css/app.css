@@ -41,6 +41,24 @@ a {
   width: 1%;
   margin-top: 30px;
 }
+.search-result {
+  width: 80%;
+  max-height: 200px;
+  overflow: scroll;
+  background: #fff;
+  position: absolute;
+  left: 10%;
+}
+.search-result li {
+  list-style: none;
+  padding: 5%;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 16px;
+  cursor: pointer;
+}
+.search-result li:hover {
+  background: #f5f5f5;
+}
 .hero {
   width: 100%;
   min-height: 600px;
