@@ -5,7 +5,9 @@ angular.module('app.controllers', ['ngAnimate'])
         $scope.medicines = _.uniq(response, function(o){
          return o.name
         });
-        console.log($scope.medicines);
+
+        $scope.unfilteredMedicines = response;
+        // console.log($scope.unfilteredMedicines);
     })
 
     $scope.textChanged = function() {
@@ -18,13 +20,17 @@ angular.module('app.controllers', ['ngAnimate'])
 	};
 
 	$scope.select = function(med) {
-        console.log(med)
-        $scope.medList = med.name;
+        $scope.credentials.name = med.name;
         $scope.showResults = false;
     }
 
     $scope.step1 = function() {
     	$scope.one = true;
+        var selectedName = $scope.credentials.name;
+        $scope.selected = _.filter($scope.unfilteredMedicines, function(o){ 
+            return o.name == selectedName; 
+        });
+        console.log($scope.selected)
     }
 
     $scope.step2 = function() {
