@@ -27,24 +27,24 @@
 <div class="min500 gradient" id="main">
 	<div class="ghost-line" ng-hide="two"></div>
 	<div class="card z-index4" ng-hide="one">
-	<form name="priceForm">
-		<div class="body">
-			<h3 class="text-center">First, tell us how much you pay.</h3>
-				<p>I buy 
-					<input type="text" ng-model="credentials.name" ng-change="textChanged()" placeholder="" required>
-				</p>
-				<div class="search-result b-b" ng-if="showResults">
-					<li class="" ng-repeat="med in medicines | filter: credentials.name" ng-click="select(med)">{{med.name}}</li>
-				</div>
-				<p>for  &#8358<input type="number" ng-model="credentials.price" placeholder="3,000" required></p>
-				
-		</div>
-		<div class="footer">
-			<button class="btn btn-success" ng-click="step1()" ng-disabled="priceForm.$invalid">
-				NEXT
-			</button>
-		</div>
-	</form>	
+		<form name="priceForm">
+			<div class="body">
+				<h3 class="text-center">First, tell us how much you pay.</h3>
+					<p>I buy 
+						<input type="text" ng-model="credentials.name" ng-change="textChanged()" placeholder="" required>
+					</p>
+					<div class="search-result b-b" ng-if="showResults">
+						<li class="" ng-repeat="med in medicines | filter: credentials.name" ng-click="select(med)">{{med.name}}</li>
+					</div>
+					<p>for  &#8358<input type="number" ng-model="credentials.price" placeholder="3,000" required></p>
+					
+			</div>
+			<div class="footer">
+				<button class="btn btn-success" ng-click="step1()" ng-disabled="priceForm.$invalid">
+					NEXT
+				</button>
+			</div>
+		</form>	
 	</div>
 	<div class="card z-index3" ng-hide="two">
 		<div class="body-result">
@@ -54,7 +54,7 @@
 	            <span class="col-md-4 text-bold">Dosage Form</span>
 	            <span class="col-md-4 text-bold">Strength</span>
 	        </div>
-	        <div class="result b-b text-sm clickable" ng-click="step2()" ng-repeat="select in selected">
+	        <div class="result b-b text-sm clickable" ng-click="step2(select)" ng-repeat="select in selected">
                 <span class="col-md-4 col-xs-3 text-ellipsis">{{select.name}}</span>
                 <span class="col-md-4 col-xs-3 text-ellipsis">{{select.form}}</span>
                 <span class="col-md-4 col-xs-3 text-ellipsis">{{select.strength}}</span>
@@ -63,131 +63,14 @@
 	</div>
 </div>
 
-<div class="overlay overlay-dark" ng-show="personNode">
-	<div class="col-md-6 col-md-offset-3 panel animated animate-slow bounceInUp no-padder">
-		<div class="col-md-12 bio padder">
-			<i class="fa fa-close clickable right" ng-click="close()"></i>
-			<div class="avatar"></div>
-			<h1 class="text-center">{{entity.name}}</h1>
-			<p class="text-justify">Senator of the Federal Republic of Nigeria from Lagos State. He represents Lagos East in the current 7th National Assembly. Senator Ashafa is the Vice-Chairman, Senate Committee on Lands, Housing and Urban Development. He is also a member of the following Senate committees: Environment and Ecology Committee, Committee on Federal Character and Inter-Governmental Relations, Gas Committee, and Senate Services Committee.
-			</p>
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b b-r p-t-sm relative">
-			<b class="relative">Budget In Care <span class="help-badge clickable" ng-click="help = !help">?</span></b>
-			<p ng-if="entity.totalBudget">{{entity.totalBudget | number: fractionSize}}</p>
-			<p ng-if="!entity.totalBudget">Not Available</p>
-
-			<div class="col-md-12 help-card p-t-sm" ng-show="help">
-				Total bugdet is the sum of the constituency budgets for {{entity.name}}
-			</div>
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b b-r p-t-sm">
-			<b>Political Party</b>
-			<p ng-if="entity.party">{{entity.party}}</p>
-			<p ng-if="!entity.party">Not Available</p>
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b b-r p-t-sm">
-			<b>State</b>
-			<p ng-if="entity.state.name">{{entity.state.name}}</p>
-			<p ng-if="!entity.state.name">Not Available</p>
-
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b p-t-sm">
-			<b>District</b>
-			<p ng-if="entity.district.name">{{entity.district.name}}</p>
-			<p ng-if="!entity.district.name">Not Available</p>
-
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b b-r p-t-sm">
-			<b>Phone Number</b>
-			<p ng-if="entity.phone">(234) {{entity.phone}}</p>
-			<p ng-if="!entity.phone">Not Available</p>
-
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b b-r p-t-sm">
-			<b>Email</b>
-			<p ng-if="entity.email">{{entity.email}}</p>
-			<p ng-if="!entity.email">Not Available</p>
-		</div>
-
-		<div class="col-md-12 p-l p-r projects-header">
-			<h5 class="text-bold text-uppercase text-center">Projects in {{entity.district.name}}</h5>
-		</div>
-
-		<div class="panel-body clickable col-md-12 panel-top b-b p-r p-l" ng-repeat="contract in contracts" ng-click="showTab = !showTab" ng-class="{'bg-light': showTab}">
-			<div class="truncate pull-left capitalize">{{contract.description}}</div>
-			<i class="fa fa-angle-down pull-right" ng-show="!showTab"></i>
-			<i class="fa fa-angle-up pull-right" ng-show="showTab"></i>
-			<ul class="list-group m-t-md" ng-show="showTab">
-				<li class="list-group-item col-md-12 capitalize">
-					<p>{{contract.description}}</p>
-				</li>
-				<li class="list-group-item col-xs-6 col-md-4">
-					<h5>Ministry</h5>
-					<b>{{contract.ministry}}</b>
-					<b ng-if="!contract.ministry">NA</b>
-				</li>
-
-				<li class="list-group-item col-xs-6 col-md-4">
-					<h5>Agency</h5>
-					<b>{{contract.agency}}</b>
-				</li>
-
-				<li class="list-group-item col-xs-6 col-md-4">
-					<h5>Cost</h5>
-					<b>N{{contract.cost | number: fractionSize}}</b>
-				</li>
-				<li class="list-group-item col-xs-6 col-md-4">
-					<h5>District</h5>
-					<b>{{contract.district.name}}</b>
-				</li>
-				<li class="list-group-item col-xs-6 col-md-4">
-					<h5>State</h5>
-					<b>{{contract.state.name}}</b>
-				</li>
-			</ul>
-		</div>
-	</div>
+<div class="overlay overlay-white text-center" ng-show="personNode">
+	<h3 class="m-b-lg">Buying {{credentials.name}} at &#8358{{credentials.price}} is {{judgement}}% higher than the median price.</h3>
+	<p>Share with your friends</p>
+	<a href=""><i class="fa fa-twitter fa-3x p-r"></i></a>
+	<a href=""><i class="fa fa-facebook fa-3x"></i></a>
+	<p class="m-t-lg clickable text-bold" ng-click="close()">Go back</p>
 </div>
 
-<div class="overlay overlay-dark" ng-show="projectNode">
-	<div class="col-md-6 col-md-offset-3 panel-sm animated animate-slow bounceInUp no-padder">
-		<div class="col-md-12">
-
-		</div>
-		<div class="col-md-12 text-justify bio padder">
-			<i class="fa fa-close clickable right absolute-right" ng-click="close()"></i>
-			{{entity.description}}
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b p-t-sm">
-			<b>Cost</b>
-			<p ng-if="entity.cost">N{{entity.cost | number: fractionSize}}</p>
-			<p ng-if="!entity.cost">Not Available</p>
-
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b b-r p-t-sm">
-			<b>Ministry</b>
-			<p ng-if="entity.ministry">{{entity.ministry}}</p>
-			<p ng-if="!entity.ministry">Not Available</p>
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b b-r p-t-sm">
-			<b>Agency</b>
-			<p ng-if="entity.agency">{{entity.agency}}</p>
-			<p ng-if="!entity.agency">Not Available</p>
-
-		</div>
-		<div class="col-xs-6 col-md-4 text-center b-b b-r p-t-sm">
-			<b>Country</b>
-			<p>Nigeria</p>
-		</div>
-		<div class="cog-xs-6 col-md-4 text-center b-b b-r p-t-sm">
-			<b>State</b>
-			<p ng-if="entity.district.name">{{entity.district.name}}</p>
-			<p ng-if="!entity.district.name">Not Available</p>
-
-		</div>
-	</div>
-</div>
 
 <div class="footer">
 	<div class="col-md-8">
