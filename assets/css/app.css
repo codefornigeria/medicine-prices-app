@@ -162,6 +162,7 @@ a {
   padding: 50px;
   font-size: 18px;
   background: #f7f7f7;
+  overflow: scroll;
 }
 .card .body-result .result {
   width: 100%;
