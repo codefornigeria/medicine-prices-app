@@ -48,27 +48,33 @@
 	<div class="card z-index3" ng-hide="two">
 		<div class="body-result">
 			<h3 class="text-center m-b-sm">Next, confirm dosage form and strength.</h3>
-			<div class="clearfix padder-lg text-sm m-t-md m-b-md">
-	            <span class="col-md-6 text-bold">Name</span>
-	            <span class="col-md-4 text-bold">Dosage Form</span>
-	            <span class="col-md-2 text-bold">Strength</span>
+			<div class="clearfix padder-md text-md m-t-md m-b-md">
+	            <span class="col-md-5 text-bold text-ellipsis no-padder">Name</span>
+	            <span class="col-md-5 text-bold text-ellipsis no-padder">Dosage Form</span>
+	            <span class="col-md-2 text-bold no-padder">Strength</span>
 	        </div>
-	        <div class="result b-b text-sm clickable" ng-click="step2(select)" ng-repeat="select in selected">
-                <span class="col-md-6 col-xs-3 ">{{select.name}}</span>
-                <span class="col-md-4 col-xs-3 text-ellipsis">{{select.form}}</span>
-                <span class="col-md-2 col-xs-3 text-ellipsis">{{select.strength}}</span>
+	        <div class="result b-b text-md clickable text-ellipsis" ng-click="step2(select)" ng-repeat="select in selected">
+                <span class="col-md-5 col-xs-3 text-ellipsis">{{select.name}}</span>
+                <span class="col-md-5 col-xs-3 text-ellipsis capitalize">{{select.form}}</span>
+                <span class="col-md-2 col-xs-3 text-ellipsis">
+                	<p ng-if="select.strength">{{select.strength}}</p>
+                	<p ng-if="!select.strength">-</p>
+                </span>
             </div> 
 		</div>
 	</div>
 </div>
 
-<div class="overlay overlay-white text-center" ng-show="personNode">
-	<h3 class="m-b-lg">At &#8358{{credentials.price}}, you have paid {{judgement}}% of the global average price for {{credentials.name}}
-	</h3>
-	<p>Shout about it!</p>
-	<a href=""><i class="fa fa-twitter fa-3x p-r"></i></a>
-	<a href=""><i class="fa fa-facebook fa-3x"></i></a>
-	<p class="m-t-lg clickable text-bold" ng-click="close()">Go back</p>
+<div class="overlay overlay-dark text-center" ng-show="personNode">
+	<h3 class="animated pulse infinite animate-slow" ng-hide="loaded">Calculating...</h3>
+	<div class="animated fadeIn" ng-show="loaded">
+		<h3 class="m-b-lg">At &#8358{{credentials.price}}, you have paid {{judgement}}% of the global average price for {{credentials.name}}
+		</h3>
+		<p class="call2action">Shout about it!</p>
+		<a href=""><i class="fa fa-twitter fa-3x p-r"></i></a>
+		<a href=""><i class="fa fa-facebook fa-3x"></i></a>
+		<p class="m-t-lg clickable text-bold" ng-click="close()">Go back</p>
+	</div>
 </div>
 
 

@@ -1,6 +1,6 @@
 angular.module('app.controllers', ['ngAnimate'])
   
-.controller('appCtrl', function($scope, $state, $stateParams, Restangular, $location, $anchorScroll) {
+.controller('appCtrl', function($scope, $state, $stateParams, Restangular, $location, $anchorScroll, $timeout) {
     Restangular.all('medicine').getList().then(function(response){
         $scope.medicines = _.uniq(response, function(o){
          return o.name
@@ -32,10 +32,12 @@ angular.module('app.controllers', ['ngAnimate'])
     }
 
     $scope.step2 = function(select) {
-        $scope.answer =  ($scope.credentials.price / select.price * 300) * 100;
+        $scope.answer =  ($scope.credentials.price / (select.price * 300)) * 100;
         $scope.judgement = Math.round($scope.answer);
     	$scope.two = true;
-        $scope.personNode = true;
+        $scope.personNode = true
+        $timeout(function(){$scope.loaded = true}, 5000);
+        
     }
 
     $scope.close = function() {

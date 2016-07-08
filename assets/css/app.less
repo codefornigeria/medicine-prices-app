@@ -91,7 +91,7 @@ a {
 	width: 80%;
 	max-height: 200px;
 	overflow: scroll;
-	background: #fff;
+	background: #f5f5f5;
 	position: absolute;
 	left: 10%;
 	z-index: 1;
@@ -99,12 +99,12 @@ a {
 	li {
 		list-style: none;
 		padding: 5%;
-		border-bottom: 1px solid #f5f5f5;
+		border-bottom: 1px solid #c5c5c5;
 		font-size: 16px;
 		cursor: pointer;
 
 		&:hover {
-			background: #f5f5f5;
+			background: #c5c5c5;
 		}
 	}
 }
@@ -216,7 +216,7 @@ a {
 	.body-result {
 		height: 360px;
 		width: 100%;
-		padding: 50px;
+		padding: 20px;
 		font-size: 18px;
 		background: #f7f7f7;
 		overflow: scroll;
@@ -224,11 +224,16 @@ a {
 		.result {
 			width: 100%;
 			padding: 3%;
+			padding-left: 0;
 			height: 50px;
-			background: #fff;
+			background: none;
+
+			&:first-of-type {
+				border-top: 1px solid rgba(0,0,0,.0785);
+			}
 
 			&:hover {
-				background: #f5f5f5;
+				background: #c5c5c5;
 			}
 		}
 	}
@@ -239,7 +244,7 @@ a {
 		background: #ebedeb;
 		border-top: 1px solid #e6e8e6;
 		// border-bottom-left-radius: 6px;
-  //   	border-bottom-right-radius: 6px;
+  		// border-bottom-right-radius: 6px;
     	text-align: center;
     	padding: 0;
     	padding-top: 25px;
@@ -511,7 +516,20 @@ a {
 }
 
 .overlay-dark {
-	background: rgba(0,0,0,0.8);
+	background: #DBD1B7;
+	padding: 20%;
+	padding-top: 15%;
+	color: #151A1E;
+
+	h3 {
+		font-size: 48px;
+	}
+
+	.call2action {
+		color: #CE4415;
+		font-size: 40px;
+		text-transform: uppercase;
+	}
 }
 
 .overlay-white {

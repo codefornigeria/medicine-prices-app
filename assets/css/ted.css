@@ -114,6 +114,10 @@
 	border-bottom: 1px solid rgba(0,0,0,.0785);
 }
 
+.b-t {
+	border-top: 1px solid rgba(0,0,0,.0785);
+}
+
 .b-l {
 	border-left: 1px solid #f5f5f5;
 }
@@ -132,6 +136,10 @@
 
 .text-sm {
 	font-size: 12px;
+}
+
+.text-md {
+	font-size: 16px;
 }
 
 .text-bold {
