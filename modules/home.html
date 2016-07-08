@@ -14,7 +14,7 @@
 </nav>
 <div class="hero">
 	<div class="col-md-10 col-md-offset-1 p-t-lg text-center">
-		<p class="header">How much does your medicine cost?</p>
+		<p class="header">What should your medicine cost?</p>
 		<p class="col-md-10 col-md-offset-1 sub-header p-t-sm">
 			Is NHIS paying hospitals enough for life saving medicines? Let’s find out.
 		</p>
@@ -64,8 +64,9 @@
 </div>
 
 <div class="overlay overlay-white text-center" ng-show="personNode">
-	<h3 class="m-b-lg">Buying {{credentials.name}} at &#8358{{credentials.price}} is {{judgement}}% higher than the median price.</h3>
-	<p>Share with your friends</p>
+	<h3 class="m-b-lg">At &#8358{{credentials.price}}, you have paid {{judgement}}% of the global average price for {{credentials.name}}
+	</h3>
+	<p>Shout About it</p>
 	<a href=""><i class="fa fa-twitter fa-3x p-r"></i></a>
 	<a href=""><i class="fa fa-facebook fa-3x"></i></a>
 	<p class="m-t-lg clickable text-bold" ng-click="close()">Go back</p>
