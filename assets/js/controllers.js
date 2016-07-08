@@ -5,7 +5,9 @@ angular.module('app.controllers', ['ngAnimate'])
         $scope.medicines = response;
     })
 
-
+    $scope.textChanged = function() {
+        $scope.showResults = true;
+    }
     
 	$scope.scrollTo = function(id) {
 		// $location.hash(id);
@@ -15,6 +17,7 @@ angular.module('app.controllers', ['ngAnimate'])
 	$scope.select = function(med) {
         console.log(med)
         $scope.medList = med.name;
+        $scope.showResults = false;
     }
 
     $scope.step1 = function() {
