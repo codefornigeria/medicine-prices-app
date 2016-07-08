@@ -135,6 +135,13 @@ a {
   }
 }
 
+@media all and (min-width: 320px) and (max-width: 800px) {
+  .card {
+    width: 60%;
+  }
+}
+
+
 @media all and (min-width: 320px) and (max-width: 640px) {
   .card h3 {
     font-size: 18px;
@@ -174,7 +181,7 @@ a {
 }
 .card .body-result .result {
     width: 100%;
-    padding: 3%;
+    padding: 3%, 3%, 3%, 0%;
     height: 50px;
     background: #f7f7f7;
     border-bottom: solid 0.5pt #fff;
