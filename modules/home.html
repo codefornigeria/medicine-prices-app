@@ -34,7 +34,7 @@
 					<input type="text" ng-model="medList" ng-change="textChanged()" placeholder="" required>
 				</p>
 				<div class="search-result b-b" ng-if="showResults">
-					<li class="" ng-repeat="med in medicines | filter: medList" ng-click="select(med)">{{med.name}} {{med.strength}}</li>
+					<li class="" ng-repeat="med in medicines | filter: medList" ng-click="select(med)">{{med.name}}</li>
 				</div>
 				<p>for  &#8358<input type="number" ng-model="price" placeholder="3,000" required></p>
 				
