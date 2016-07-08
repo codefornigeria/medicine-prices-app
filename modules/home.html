@@ -31,12 +31,12 @@
 		<div class="body">
 			<h3 class="text-center">First, tell us how much you pay.</h3>
 				<p>I buy 
-					<input type="text" ng-model="medList" ng-change="textChanged()" placeholder="" required>
+					<input type="text" ng-model="credentials.name" ng-change="textChanged()" placeholder="" required>
 				</p>
 				<div class="search-result b-b" ng-if="showResults">
-					<li class="" ng-repeat="med in medicines | filter: medList" ng-click="select(med)">{{med.name}}</li>
+					<li class="" ng-repeat="med in medicines | filter: credentials.name" ng-click="select(med)">{{med.name}}</li>
 				</div>
-				<p>for  &#8358<input type="number" ng-model="price" placeholder="3,000" required></p>
+				<p>for  &#8358<input type="number" ng-model="credentials.price" placeholder="3,000" required></p>
 				
 		</div>
 		<div class="footer">
@@ -47,19 +47,17 @@
 	</form>	
 	</div>
 	<div class="card z-index3" ng-hide="two">
-		<div class="body">
+		<div class="body-result">
 			<h3 class="text-center m-b-sm">Next, confirm dosage form and strength.</h3>
-			<div class="clearfix padder-lg text-sm m-t-md">
-	            <span class="col-md-3 text-bold">Name</span>
+			<div class="clearfix padder-lg text-sm m-t-md m-b-md">
+	            <span class="col-md-4 text-bold">Name</span>
 	            <span class="col-md-4 text-bold">Dosage Form</span>
-	            <span class="col-md-2 text-bold">Strength</span>
-	            <span class="col-md-3 text-bold">Type</span>
+	            <span class="col-md-4 text-bold">Strength</span>
 	        </div>
-	        <div class="list-group b-b text-sm clickable p-t-sm" ng-click="step2()">
-                <span class="col-md-3 col-xs-3 text-ellipsis">Morphine</span>
-                <span class="col-md-4 col-xs-3 text-ellipsis">Tablet</span>
-                <span class="col-md-2 col-xs-3 text-ellipsis">30mg</span>
-                <span class="col-md-3 col-xs-3 text-ellipsis">Analgesics Narcotic</span>
+	        <div class="result b-b text-sm clickable" ng-click="step2()" ng-repeat="select in selected">
+                <span class="col-md-4 col-xs-3 text-ellipsis">{{select.name}}</span>
+                <span class="col-md-4 col-xs-3 text-ellipsis">{{select.form}}</span>
+                <span class="col-md-4 col-xs-3 text-ellipsis">{{select.strength}}</span>
             </div> 
 		</div>
 	</div>
