@@ -13,7 +13,8 @@ angular.module('app.controllers', ['ngAnimate'])
     }
     
 	$scope.scrollTo = function(id) {
-		// $location.hash(id);
+        console.log(id)
+		$location.hash(id);
 	    $anchorScroll();
 	};
 
