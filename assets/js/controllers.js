@@ -36,7 +36,7 @@ angular.module('app.controllers', ['ngAnimate'])
         $scope.judgement = Math.round($scope.answer);
     	$scope.two = true;
         $scope.personNode = true
-        $timeout(function(){$scope.loaded = true}, 5000);
+        $timeout(function(){$scope.loaded = true}, 2000);
         
     }
 

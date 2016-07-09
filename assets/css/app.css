@@ -58,7 +58,7 @@ a {
   cursor: pointer;
 }
 .search-result li:hover {
-  background: #c5c5c5;
+  background: #ebedeb;
 }
 .hero {
   width: 100%;
@@ -175,7 +175,7 @@ a {
   border-top: 1px solid rgba(0, 0, 0, 0.0785);
 }
 .card .body-result .result:hover {
-  background: #c5c5c5;
+  background: #ebedeb;
 }
 .card .footer {
   height: 100px;
