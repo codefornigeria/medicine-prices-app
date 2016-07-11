@@ -217,15 +217,28 @@ a {
 		height: 360px;
 		width: 100%;
 		padding: 20px;
+		padding-top: 0;
 		font-size: 18px;
 		background: #f7f7f7;
 		overflow: scroll;
 
+		h3 {
+			width: 70%;
+			margin: 0 auto;
+		}
+
+		.pos-fixed {
+			background: #f7f7f7;
+			z-index: 10;
+			padding-top: 20px;
+		}
+
 		.result {
 			width: 100%;
-			padding: 3%;
+			padding: 0;
 			padding-left: 0;
-			height: 50px;
+			height: 60px;
+			line-height: 60px;
 			background: none;
 
 			&:first-of-type {

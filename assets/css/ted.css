@@ -77,6 +77,10 @@
 	margin-top: 60px;
 }
 
+.m-t-xl {
+	margin-top: 120px;
+}
+
 .m-t-xxl {
 	margin-top: 150px;
 }
@@ -261,3 +265,6 @@ h1, h2, h3, h4, h5, h6 {
 	position: fixed;
 }
 
+.grey {
+	color: grey;
+}

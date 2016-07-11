@@ -30,13 +30,13 @@
 			<div class="body">
 				<h3 class="text-center">First, tell us how much you pay.</h3>
 					<p>I buy 
-						<input type="text" ng-model="credentials.name" ng-change="textChanged()" placeholder="" required>
+						<input type="text" ng-model="credentials.name" ng-change="textChanged()" placeholder="Name of medicine" required>
 					</p>
 					<div class="search-result b-b" ng-if="showResults">
 						<li class="" ng-repeat="med in medicines | filter: credentials.name" ng-click="select(med)">{{med.name}}</li>
 					</div>
-					<p>for  &#8358<input type="number" ng-model="credentials.price" placeholder="3,000" required></p>
-					
+					<p>for  &#8358<input type="number" ng-model="credentials.price" placeholder="Unit price" required></p>
+					<p class="text-sm grey text-center">Unit price is the price of the medicine per tablet</p>
 			</div>
 			<div class="footer">
 				<button class="btn btn-success" ng-click="step1()" ng-disabled="priceForm.$invalid">
@@ -47,20 +47,26 @@
 	</div>
 	<div class="card z-index3" ng-hide="two">
 		<div class="body-result">
-			<h3 class="text-center m-b-sm">Next, confirm dosage form and strength.</h3>
-			<div class="clearfix padder-md text-md m-t-md m-b-md">
-	            <span class="col-md-5 text-bold text-ellipsis no-padder">Name</span>
-	            <span class="col-md-5 text-bold text-ellipsis no-padder">Dosage Form</span>
-	            <span class="col-md-2 text-bold no-padder">Strength</span>
-	        </div>
-	        <div class="result b-b text-md clickable text-ellipsis" ng-click="step2(select)" ng-repeat="select in selected">
-                <span class="col-md-5 col-xs-3 text-ellipsis">{{select.name}}</span>
-                <span class="col-md-5 col-xs-3 text-ellipsis capitalize">{{select.form}}</span>
-                <span class="col-md-2 col-xs-3 text-ellipsis">
-                	<p ng-if="select.strength">{{select.strength}}</p>
-                	<p ng-if="!select.strength">-</p>
-                </span>
-            </div> 
+			<div class="pos-fixed">
+				<h3 class="text-center m-b-sm">Next, confirm dosage form and strength.</h3>
+			
+				<div class="clearfix padder-md text-md m-t-md m-b-md">
+		            <span class="col-md-5 text-bold text-ellipsis no-padder">Name</span>
+		            <span class="col-md-5 text-bold text-ellipsis no-padder">Dosage Form</span>
+		            <span class="col-md-2 text-bold no-padder">Strength</span>
+		        </div>
+		    </div>
+		    <div class="m-t-xl">
+		     	<div class="result b-b text-md clickable text-ellipsis" ng-click="step2(select)" ng-repeat="select in selected">
+		            <span class="col-md-5 col-xs-3 text-ellipsis">{{select.name}}</span>
+		            <span class="col-md-5 col-xs-3 text-ellipsis capitalize">{{select.form}}</span>
+		        	<span class="col-md-2 col-xs-3 text-ellipsis">
+		            	<p ng-if="select.strength">{{select.strength}}</p>
+		            	<p ng-if="!select.strength">-</p>
+		            </span>
+		        </div> 
+		    </div>
+
 		</div>
 	</div>
 </div>
@@ -68,7 +74,7 @@
 <div class="overlay overlay-dark text-center" ng-show="personNode">
 	<h3 class="" ng-if="!loaded">Calculating...</h3>
 	<div class="animated fadeIn" ng-show="loaded">
-		<h3 class="m-b-lg">At &#8358{{credentials.price}}, you are paying {{judgement}}% of the global average price for {{credentials.name}}
+		<h3 class="m-b-lg typewriter">At &#8358{{credentials.price}}, you are paying {{judgement}}% of the global average price for {{credentials.name}}
 		</h3>
 		<p class="call2action">Shout about it!</p>
 		<a href=""><i class="fa fa-twitter fa-3x p-r"></i></a>
