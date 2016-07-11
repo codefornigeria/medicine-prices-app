@@ -22,14 +22,22 @@ angular.module('app.controllers', ['ngAnimate'])
         $scope.typing = $(".typing").typed({
             strings: ["At &#8358;" +price+ ", you are paying "  +outcome+ "% of the global average price for " +nname+ "."],
             contentType: 'html',
-            typeSpeed: 30,
+            typeSpeed: 20,
             backDelay: 750,
             showCursor: false,
             callback: function(){ 
-                $('.address').show();
+                console.log($scope)
+                $scope.shoutOut();
             }
         });
     };
+
+    $scope.shout = false;
+
+    $scope.shoutOut = function() {
+        $scope.shout = true;
+        $scope.$apply();
+    }
 
 	$scope.select = function(med) {
         $scope.credentials.name = med.name;
