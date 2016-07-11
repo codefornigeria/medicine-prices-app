@@ -25,6 +25,9 @@
 .no-padder {
 	padding: 0 !important;
 }
+.no-padder-left {
+	padding-left: 0 !important;
+}
 
 .text-ellipsis {
     display: block;
@@ -77,8 +80,8 @@
 	margin-top: 60px;
 }
 
-.m-t-xl {
-	margin-top: 120px;
+.m-t-xxxl {
+	margin-top: 150px;
 }
 
 .m-t-xxl {

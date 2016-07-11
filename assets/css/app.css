@@ -53,7 +53,7 @@ a {
 .search-result li {
   list-style: none;
   padding: 5%;
-  border-bottom: 1px solid #c5c5c5;
+  border-bottom: 0.5px solid rgba(197, 197, 197, 0.1);
   font-size: 16px;
   cursor: pointer;
 }
@@ -170,6 +170,7 @@ a {
   margin: 0 auto;
 }
 .card .body-result .pos-fixed {
+  width: 38%;
   background: #f7f7f7;
   z-index: 10;
   padding-top: 20px;
@@ -181,6 +182,7 @@ a {
   height: 60px;
   line-height: 60px;
   background: none;
+  border-bottom: 0.5px solid rgba(197, 197, 197, 0.1);
 }
 .card .body-result .result:first-of-type {
   border-top: 1px solid rgba(0, 0, 0, 0.0785);
