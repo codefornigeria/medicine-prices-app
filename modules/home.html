@@ -55,7 +55,7 @@
 		            <span class="col-md-4 text-bold no-padder">Strength</span>
 		        </div>
 		    </div>
-		    <div class="m-t-xxxl">
+		    <div class="m-t-lg">
 		     	<div class="result b-b text-md clickable text-ellipsis" ng-click="step2(select)" ng-repeat="select in selected">
 		            <span class="col-md-5 col-xs-3 text-ellipsis">{{select.name}}</span>
 		            <span class="col-md-3 col-xs-3 text-ellipsis capitalize">{{select.form}}</span>
@@ -74,8 +74,8 @@
 	<h3 class="" ng-if="!loaded">Calculating...</h3>
 	<div class="" ng-cloak>
 		<h3 class="typing m-b-lg" ng-show="loaded">{{typing}}</h3>
-		<div ng-if="shout">
-			<p class="call2action animated animate-slow fadeIn">Shout about it!</p>
+		<div ng-if="shout" class="animated animate-slow fadeIn">
+			<p class="call2action">Shout about it!</p>
 			<a href="https://twitter.com/intent/tweet?text=I bought {{credentials.name}} at {{outcome}} percent global average price!&url=http://medicine-prices.herokuapp.com&hashtags=fixmedprices" target="_blank"><i class="fa fa-twitter fa-3x p-r"></i></a>
 			<a fb-share><i class="fa fa-facebook fa-3x" ng-click="share()"></i></a>
 			<p class="m-t-lg clickable text-bold" ng-click="close()">Go back</p>
