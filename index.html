@@ -41,16 +41,29 @@
     <script src="assets/vendor/angular/angular-ui-router/angular-ui-router.js"></script>
     <script src="assets/vendor/angular/restangular/restangular.min.js"></script>
     <script src="assets/vendor/angular/underscore/underscore-min.js"></script>
-    <script src="assets/js/typed-min.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/codekraft-studio/angular-typed/master/dist/angular-typed.min.js"></script>
     <!--JS_VENDORS END-->
 
     <!--JS_SCRIPTS-->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/controllers.js"></script>
+      <script>
+        window.fbAsyncInit = function() {
+            FB.init({appId: '1157775040951695', status: true, cookie: true,
+            xfbml: true});
+        };
+        (function() {
+            var e = document.createElement('script'); e.async = true;
+            e.src = document.location.protocol +
+            '//connect.facebook.net/en_US/all.js';
+            document.getElementById('fb-root').appendChild(e);
+        }());
+      </script>
     <!--JS_SCRIPTS END-->
 
 </head>
     <body>
+        <div id="fb-root"></div>
         <div ng-app="app" ui-view></div>
     </body>
 </html>
