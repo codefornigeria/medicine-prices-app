@@ -71,14 +71,12 @@
 	</div>
 </div>
 
-<div class="overlay overlay-dark text-center" ng-show="personNode">
+<div class="overlay overlay-dark text-center" ng-show="personNode" >
 	<h3 class="" ng-if="!loaded">Calculating...</h3>
-	<div class="animated fadeIn" ng-show="loaded">
-		<!-- <h3 class="m-b-lg">At &#8358{{credentials.price}}, you are paying {{judgement}}% of the global average price for {{credentials.name}}
-		</h3> -->
-		<h3 typed>Hi, my name Ted Oladele ljha kajfba klajgfafga gkajgbalgjalgj akjgaldghadg ajkdgalghalgf akgjhlgadga gfasflasbgasg asglaksgalkdgalgs asljkgalga galkgal</h3>
+	<div class="" ng-cloak>
+		<h3 class="typing m-b-lg" ng-show="loaded">{{typing}}</h3>
 		<p class="call2action">Shout about it!</p>
-		<a href="https://twitter.com/intent/tweet?text=At &#8358{{credentials.price}}, we are paying {{judgement}} percent of the global average price for {{credentials.name}}&url=http://medicine-prices.herokuapp.com&hashtags=medicineprices, healthcareNigeria" target="_blank"><i class="fa fa-twitter fa-3x p-r"></i></a>
+		<a href="https://twitter.com/intent/tweet?text=I bought {{credentials.name}} at {{judgement}} global average price&url=http://medicine-prices.herokuapp.com&hashtags=fixmedprices" target="_blank"><i class="fa fa-twitter fa-3x p-r"></i></a>
 		<a fb-share><i class="fa fa-facebook fa-3x" ng-click="share()"></i></a>
 		<p class="m-t-lg clickable text-bold" ng-click="close()">Go back</p>
 	</div>

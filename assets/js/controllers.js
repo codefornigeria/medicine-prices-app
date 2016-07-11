@@ -18,6 +18,19 @@ angular.module('app.controllers', ['ngAnimate'])
 	    // $anchorScroll();
 	};
 
+    $scope.initTyper = function (nname,price,outcome) {
+        $scope.typing = $(".typing").typed({
+            strings: ["At &#8358;" +price+ ", you are paying "  +outcome+ "% of the global average price for " +nname+ "."],
+            contentType: 'html',
+            typeSpeed: 30,
+            backDelay: 750,
+            showCursor: false,
+            callback: function(){ 
+                $('.address').show();
+            }
+        });
+    };
+
 	$scope.select = function(med) {
         $scope.credentials.name = med.name;
         $scope.showResults = false;
@@ -34,14 +47,17 @@ angular.module('app.controllers', ['ngAnimate'])
 
     $scope.step2 = function(select) {
         $scope.answer =  ($scope.credentials.price / (select.price * 300)) * 100;
-        $scope.judgement = Math.round($scope.answer);
+        $scope.outcome = Math.round($scope.answer);
     	$scope.two = true;
-        $scope.personNode = true
-        $scope.loaded = true
-        // $timeout(function(){$scope.loaded = true}, 2000);
+        $scope.personNode = true;
+        $scope.initTyper($scope.credentials.name,$scope.credentials.price,$scope.outcome);
+        $timeout(function(){$scope.loaded = true}, 1000);
         
     }
 
+
+
+    
     // $scope.share = function() {
     //     FB.ui({
     //         method: 'feed',
@@ -54,6 +70,7 @@ angular.module('app.controllers', ['ngAnimate'])
     //     });
     // }
 
+    
     $scope.close = function() {
         $scope.personNode = false;
         $state.reload();

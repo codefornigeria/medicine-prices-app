@@ -537,7 +537,13 @@ a {
 	color: #151A1E;
 
 	h3 {
-		font-size: 48px;
+		font-size: 40px;
+	}
+
+	.second {
+		width: 80%;
+		margin: 0 auto;
+		animation: type 4s steps(60, end);
 	}
 
 	.call2action {
@@ -616,66 +622,10 @@ a {
 	}
 }
 
-@-webkit-keyframes blink-it {
-	0% {
-		opacity: 1;
-	}
+@keyframes type{ 
+  from { width: 0; } 
+} 
 
-	50% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@-moz-keyframes blink-it {
-	0% {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@-o-keyframes blink-it {
-	0% {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes blink-it {
- 	0% {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-.blink {
-	-webkit-animation: blink-it steps(1) 1s infinite;
-	-moz-animation: blink-it steps(1) 1s infinite;
-	-ms-animation: blink-it steps(1) 1s infinite;
-	-o-animation: blink-it steps(1) 1s infinite;
-	animation: blink-it steps(1) 1s infinite;
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
