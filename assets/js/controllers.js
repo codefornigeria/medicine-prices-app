@@ -26,7 +26,6 @@ angular.module('app.controllers', ['ngAnimate'])
             backDelay: 750,
             showCursor: false,
             callback: function(){ 
-                console.log($scope)
                 $scope.shoutOut();
             }
         });
@@ -37,6 +36,7 @@ angular.module('app.controllers', ['ngAnimate'])
     $scope.shoutOut = function() {
         $scope.shout = true;
         $timeout(function(){$scope.social = true}, 1000);
+        $timeout(function(){$scope.goBack = true}, 9000);
         $scope.$apply();
     }
 
@@ -63,46 +63,9 @@ angular.module('app.controllers', ['ngAnimate'])
         $timeout(function(){$scope.loaded = true}, 1000);
         
     }
-
-
-
-    
-    // $scope.share = function() {
-    //     FB.ui({
-    //         method: 'feed',
-    //         name: 'At &#8358 $scope.credentials.price, we are paying $scope.judgement percent of the global average price for $scope.credentials.name',
-    //         link: 'http://medicine-prices.herokuapp.com',
-    //         picture: '',
-    //         caption: '',
-    //         description: 'This is the content of the "description" field, below the caption.',
-    //         message: ''
-    //     });
-    // }
-
     
     $scope.close = function() {
         $scope.personNode = false;
         $state.reload();
     }
 })
-
-.directive('fbShare', [
-    function() {
-        return {
-            restrict: 'A',
-            link: function(scope, element) {
-                element.on('click', function() {
-                    FB.ui({
-                        method: 'feed',
-                        name: 'Name you want to show',
-                        link: 'http://link-you-want-to-show',
-                        picture: 'http://picture-you-want-to-show',
-                        caption: 'Caption you want to show',
-                        description: 'Description you want to show',
-                        message: 'Message you want to show'
-                    });
-                });
-            }
-        };
-    }
-]);

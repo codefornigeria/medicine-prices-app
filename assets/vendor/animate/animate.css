@@ -138,8 +138,8 @@ Copyright (c) 2015 Daniel Eden
   }
 
   50% {
-  -webkit-transform: scale3d(1.05, 1.05, 1.05);
-  transform: scale3d(1.05, 1.05, 1.05);
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
   }
 
   100% {
@@ -155,8 +155,8 @@ Copyright (c) 2015 Daniel Eden
   }
 
   50% {
-  -webkit-transform: scale3d(1.05, 1.05, 1.05);
-  transform: scale3d(1.05, 1.05, 1.05);
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
   }
 
   100% {

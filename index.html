@@ -49,24 +49,10 @@
     <!--JS_SCRIPTS-->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/controllers.js"></script>
-
-      <script>
-        window.fbAsyncInit = function() {
-            FB.init({appId: '1157775040951695', status: true, cookie: true,
-            xfbml: true});
-        };
-        (function() {
-            var e = document.createElement('script'); e.async = true;
-            e.src = document.location.protocol +
-            '//connect.facebook.net/en_US/all.js';
-            document.getElementById('fb-root').appendChild(e);
-        }());
-      </script>
     <!--JS_SCRIPTS END-->
 
 </head>
     <body>
-        <div id="fb-root"></div>
         <div ng-app="app" ui-view></div>
     </body>
 </html>
