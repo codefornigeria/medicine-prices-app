@@ -20,9 +20,9 @@ angular.module('app.controllers', ['ngAnimate'])
 
     $scope.initTyper = function (nname,price,outcome) {
         $scope.typing = $(".typing").typed({
-            strings: ["At &#8358;" +price+ ", you are paying "  +outcome+ "% of the global average price for " +nname+ "."],
+            strings: ["At &#8358;" +price+ ",^2000 you are paying "  +outcome+ "% of the global average price for " +nname+ "."],
             contentType: 'html',
-            typeSpeed: 20,
+            typeSpeed: 30,
             backDelay: 750,
             showCursor: false,
             callback: function(){ 
@@ -36,6 +36,7 @@ angular.module('app.controllers', ['ngAnimate'])
 
     $scope.shoutOut = function() {
         $scope.shout = true;
+        $timeout(function(){$scope.social = true}, 1000);
         $scope.$apply();
     }
 

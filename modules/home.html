@@ -70,14 +70,14 @@
 	</div>
 </div>
 
-<div class="overlay overlay-dark text-center" ng-show="personNode" >
+<div class="overlay overlay-dark text-center" ng-show="personNode">
 	<h3 class="" ng-if="!loaded">Calculating...</h3>
 	<div class="" ng-cloak>
 		<h3 class="typing m-b-lg" ng-show="loaded">{{typing}}</h3>
 		<div ng-if="shout" class="animated animate-slow fadeIn">
-			<p class="call2action">Shout about it!</p>
-			<a href="https://twitter.com/intent/tweet?text=I bought {{credentials.name}} at {{outcome}} percent global average price!&url=http://medicine-prices.herokuapp.com&hashtags=fixmedprices" target="_blank"><i class="fa fa-twitter fa-3x p-r"></i></a>
-			<a fb-share><i class="fa fa-facebook fa-3x" ng-click="share()"></i></a>
+			<p class="call2action">Tell the world!</p>
+			<a class="animated animate-slow fadeIn" href="https://twitter.com/intent/tweet?text=Hello world, I am paying {{outcome}} percent of the global average price for {{credentials.name}}!&url=http://medicine-prices.herokuapp.com&hashtags=fixmedprices" target="_blank" ng-if="social"><i class="fa fa-twitter fa-3x animated animate-slow pulse infinite text-center"></i></a>
+			<!-- <a fb-share><i class="fa fa-facebook fa-3x" ng-click="share()"></i></a> -->
 			<p class="m-t-lg clickable text-bold" ng-click="close()">Go back</p>
 		</div>
 	</div>

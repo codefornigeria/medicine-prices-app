@@ -166,7 +166,7 @@ a {
   overflow: scroll;
 }
 .card .body-result .pos-fixed {
-  width: 38%;
+  width: 37%;
   background: #f7f7f7;
   z-index: 10;
   padding-top: 20px;
@@ -278,7 +278,7 @@ a {
 }
 .footer .fa-twitter-square {
   color: skyblue;
-  margin-right: 10px;
+  margin-right: 0;
 }
 .footer .fa-facebook-square {
   color: #3B5998;
