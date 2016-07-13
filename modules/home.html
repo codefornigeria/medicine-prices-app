@@ -56,7 +56,7 @@
 		        </div>
 		    </div>
 		    <div class="m-t-lg">
-		     	<div class="result b-b text-md clickable text-ellipsis" ng-click="step2(select)" ng-repeat="select in selected">
+		     	<div class="result b-b text-md clickable text-ellipsis" ng-click="step2(select)" ng-repeat="select in choosen">
 		            <span class="col-md-5 col-xs-3 text-ellipsis">{{select.name}}</span>
 		            <span class="col-md-4 col-xs-3 text-ellipsis capitalize no-padder-left">{{select.form}}</span>
 		        	<span class="col-md-3 col-xs-3 text-ellipsis no-padder-left">
@@ -75,7 +75,7 @@
 	<div class="" ng-cloak>
 		<h3 class="typing m-b-lg" ng-show="loaded">{{typing}}</h3>
 		<div ng-if="shout" class="animated animate-slow fadeIn">
-			<p class="call2action">Tell the world!</p>
+			<p class="call2action">Tell the world :)</p>
 			<a class="animated animate-slow fadeIn" href="https://twitter.com/intent/tweet?text=Hello world, I am paying {{outcome}} percent of the global average price for {{credentials.name}}!&url=http://medicine-prices.herokuapp.com&hashtags=fixmedprices" target="_blank" ng-if="social"><i class="fa fa-twitter fa-3x animated animate-slow pulse infinite text-center"></i></a>
 			<!-- <a fb-share><i class="fa fa-facebook fa-3x" ng-click="share()"></i></a> -->
 			<p class="m-t-lg clickable text-bold" ng-click="close()">Go back</p>

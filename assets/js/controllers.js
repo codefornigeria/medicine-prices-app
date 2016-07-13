@@ -48,10 +48,10 @@ angular.module('app.controllers', ['ngAnimate'])
     $scope.step1 = function() {
     	$scope.one = true;
         var selectedName = $scope.credentials.name;
-        $scope.selected = _.filter($scope.unfilteredMedicines, function(o){ 
+        $scope.choosen = _.filter($scope.unfilteredMedicines, function(o){ 
             return o.name == selectedName; 
         });
-        console.log($scope.selected)
+        console.log($scope.choosen)
     }
 
     $scope.step2 = function(select) {

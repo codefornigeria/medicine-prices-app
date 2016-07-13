@@ -442,7 +442,7 @@ a {
 .overlay-dark .call2action {
   color: #CE4415;
   font-size: 40px;
-  text-transform: capitalize;
+  font-weight: bold;
 }
 .overlay-white {
   background: rgba(255, 255, 255, 0.95);

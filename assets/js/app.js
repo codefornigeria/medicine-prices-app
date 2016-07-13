@@ -18,11 +18,6 @@ angular.module('app', [
         templateUrl: 'modules/home.html',
         controller: 'appCtrl'
     })
-      // .state('results', {
-      //     url: '/search?query',
-      //     templateUrl: 'modules/search-result.html',
-      //     controller: 'resultCtrl'
-      // })  
 
       $urlRouterProvider.otherwise('/404')  
   }])
@@ -92,4 +87,4 @@ angular.module('app', [
 
     };
     
-});
+})
