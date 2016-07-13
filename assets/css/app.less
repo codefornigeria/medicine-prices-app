@@ -150,7 +150,7 @@ a {
 .ghost-line:after {
   content: '';
   width: 0;
-  height: 50%;
+  height: 40%;
   position: absolute;
   border:1px dashed #009925;
   margin: 0 auto;
@@ -212,7 +212,13 @@ a {
   			-webkit-border-radius: 3px;
 		}
 	}
-
+	
+	.pos-fixed {
+			width: inherit;
+			background: #f7f7f7;
+			z-index: 10;
+			padding-top: 20px;
+		}
 	.body-result {
 		height: 360px;
 		width: 100%;
@@ -227,12 +233,7 @@ a {
 			// margin: 0 auto;
 		}
 
-		.pos-fixed {
-			width: 37%;
-			background: #f7f7f7;
-			z-index: 10;
-			padding-top: 20px;
-		}
+		
 
 		.result {
 			width: 100%;
