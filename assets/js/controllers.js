@@ -36,7 +36,7 @@ angular.module('app.controllers', ['ngAnimate'])
     $scope.shoutOut = function() {
         $scope.shout = true;
         $timeout(function(){$scope.social = true}, 1000);
-        $timeout(function(){$scope.goBack = true}, 9000);
+        $timeout(function(){$scope.goBack = true}, 5000);
         $scope.$apply();
     }
 
