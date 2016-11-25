@@ -534,7 +534,7 @@ a {
 }
 
 .overlay-dark {
-	background: #DBD1B7;
+	background: #ffffff;
 	padding: 20%;
 	padding-top: 15%;
 	color: #151A1E;
@@ -556,7 +556,7 @@ a {
 	.call2action {
 		color: #CE4415;
 		font-size: 40px;
-		font-weight: bold;
+		font-weight: 300;
 
 		@media @mobile {
 			font-size: 25px;
@@ -644,14 +644,7 @@ a {
 .typing {
 	p {
 		&:nth-of-type(1) {
-			font-size: 25px;
-			@media @mobile {
-				font-size: 20px;
-				margin-bottom: 20px;
-				margin-top: 30px;
-			}
-		}
-		&:nth-of-type(2) {
+			font-weight: 300 !important;
 			@media @mobile {
 				font-size: 30px;
 				margin-bottom: 20px;
@@ -660,7 +653,23 @@ a {
 	}
 }
 
+.intro {
+	font-size: 20px;
+	font-weight: 200 !important;
+	margin: 0;
+	@media @mobile {
+		font-size: 20px;
+		margin-bottom: 20px;
+		margin-top: 30px;
+	}
+}
+
 .assumption {
 	font-size: 18px;
-	margin-top: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.go-back {
+
 }

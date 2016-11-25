@@ -20,7 +20,7 @@ angular.module('app.controllers', ['ngAnimate'])
 
     $scope.initTyper = function (nname,price,outcome,form,realPrice,strength) {
         $scope.typing = $(".typing").typed({
-            strings: ["<p>The global average price for " +nname+ ", " +form+", "+strength+" is &#8358;"+realPrice+ ".</p> ^2000 <p>At &#8358;"+price+ ",^2000 you are paying "  +outcome+ "% of the global average price.</p>"],
+            strings: ["<p> ^2000 At &#8358;"+price+ ",^2000 you are paying "  +outcome+ "% of the global average price.</p>"],
             contentType: 'html',
             typeSpeed: 30,
             backDelay: 750,
