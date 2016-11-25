@@ -18,9 +18,9 @@ angular.module('app.controllers', ['ngAnimate'])
 	    // $anchorScroll();
 	};
 
-    $scope.initTyper = function (nname,price,outcome) {
+    $scope.initTyper = function (nname,price,outcome,form,realPrice,strength) {
         $scope.typing = $(".typing").typed({
-            strings: ["At &#8358;" +price+ ",^2000 you are paying "  +outcome+ "% of the global average price for " +nname+ "."],
+            strings: ["<p>The global average price for " +nname+ ", " +form+", "+strength+" is &#8358;"+realPrice+ ".</p> ^2000 <p>At &#8358;"+price+ ",^2000 you are paying "  +outcome+ "% of the global average price.</p>"],
             contentType: 'html',
             typeSpeed: 30,
             backDelay: 750,
@@ -34,14 +34,18 @@ angular.module('app.controllers', ['ngAnimate'])
     $scope.shout = false;
 
     $scope.shoutOut = function() {
-        $scope.shout = true;
-        $timeout(function(){$scope.social = true}, 1000);
+        $timeout(function(){$scope.shout = true}, 1000);
+        $timeout(function(){$scope.social = true}, 1500);
         $timeout(function(){$scope.goBack = true}, 5000);
         $scope.$apply();
     }
 
 	$scope.select = function(med) {
+        console.log(med.plain());
         $scope.credentials.name = med.name;
+        $scope.credentials.form = med.form;
+        $scope.credentials.realPrice = med.price;
+        $scope.credentials.strength = med.strength;
         $scope.showResults = false;
     }
 
@@ -51,15 +55,14 @@ angular.module('app.controllers', ['ngAnimate'])
         $scope.choosen = _.filter($scope.unfilteredMedicines, function(o){ 
             return o.name == selectedName; 
         });
-        console.log($scope.choosen)
     }
 
     $scope.step2 = function(select) {
-        $scope.answer =  ($scope.credentials.price / (select.price * 300)) * 100;
+        $scope.answer =  ($scope.credentials.price / (select.price * 304)) * 100;
         $scope.outcome = Math.round($scope.answer);
     	$scope.two = true;
         $scope.personNode = true;
-        $scope.initTyper($scope.credentials.name,$scope.credentials.price,$scope.outcome);
+        $scope.initTyper($scope.credentials.name, $scope.credentials.price, $scope.outcome, $scope.credentials.form, $scope.credentials.realPrice, $scope.credentials.strength);
         $timeout(function(){$scope.loaded = true}, 1000);
         
     }
