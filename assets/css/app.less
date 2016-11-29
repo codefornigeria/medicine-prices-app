@@ -132,7 +132,13 @@ a {
 		font-weight: 500;
 		color: #000000;
 
+		@media @tablet {
+			width: 70%;
+			margin: auto;
+		}
+
 		@media @mobile {
+			width: 100%;
 			font-size: 18px;
 		}
 	}
@@ -140,7 +146,7 @@ a {
 
 .gradient {
 	// background-image: linear-gradient(165deg, #4885ed 0%, #90CAF9 100%);
-	padding-top: 150px;
+	padding-top: 100px;
 	-webkit-transform: translateZ( 0 );
     transform: translateZ( 0 );
     -webkit-transition: -webkit-transform 0.6s ease-in-out;
@@ -177,13 +183,20 @@ a {
 	left: 0;
 	right: 0;
 
+	@media @tablet {
+		width: 70%;
+		height: auto;
+	}
+
 	@media @mobile {
-		width: 80%
+		width: 90%;
+		height: auto;
 	}
 
 	h3 {
 		@media @mobile {
 			font-size: 18px;
+			margin-bottom: 30px;
 		}
 	}
 
@@ -193,6 +206,10 @@ a {
 		padding: 50px;
 		font-size: 18px;
 		background: #f7f7f7;
+
+		@media @mobile {
+			padding: 30px;
+		}
 
 		input, select {
 			width: 85%;
