@@ -1,8 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', Helvetica;
+  font-family: 'serif', Helvetica;
 }
 body {
   background: #FFF;
