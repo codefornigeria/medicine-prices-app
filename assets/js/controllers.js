@@ -44,7 +44,7 @@ angular.module('app.controllers', ['ngAnimate'])
         console.log(med.plain());
         $scope.credentials.name = med.name;
         $scope.credentials.form = med.form;
-        $scope.credentials.realPrice = med.price;
+        $scope.credentials.realPrice = (med.price * 304);
         $scope.credentials.strength = med.strength;
         $scope.showResults = false;
     }
