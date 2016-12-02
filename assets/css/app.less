@@ -50,6 +50,7 @@ a {
 }
 
 @mobile: ~"all and (min-width: 320px) and (max-width: 640px)";
+@mobile-custom: ~"all and (min-width: 290px) and (max-width: 640px)";
 @tablet: ~"all and (min-width: 320px) and (max-width: 959px)";
 @custom: ~"all and (min-width: 320px) and (max-width: 1024px)";
 @desktop: ~"all and (min-width: 960px)";
@@ -151,6 +152,10 @@ a {
     transform: translateZ( 0 );
     -webkit-transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
+
+    @media @mobile-custom {
+		padding-top: 30px;
+	}
 }
 
 .ghost-line:after {
@@ -193,10 +198,19 @@ a {
 		height: auto;
 	}
 
+	@media @mobile-custom {
+		width: 100%;
+		height: auto;
+	}
+
 	h3 {
 		@media @mobile {
 			font-size: 18px;
 			margin-bottom: 30px;
+		}
+		@media @mobile-custom {
+			font-size: 16px;
+			margin-bottom: 15px;
 		}
 	}
 
@@ -211,6 +225,10 @@ a {
 			padding: 30px;
 		}
 
+		@media @mobile-custom {
+			padding: 20px;
+		}
+
 		input, select {
 			width: 85%;
 			padding: 5px;
@@ -222,11 +240,22 @@ a {
 			border-radius: 3px;
 			box-shadow: none;
 			font-size: 14px;
+
+			@media @mobile-custom {
+				margin-top: 10px;
+				width: 100%;
+			}
 		}
 
 		select {
 			-webkit-appearance: none;
   			-webkit-border-radius: 3px;
+		}
+
+		p {
+			@media @mobile-custom {
+				font-size: 16px;
+			}
 		}
 	}
 	

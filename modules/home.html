@@ -31,17 +31,17 @@
 				<h3 class="text-center m-b-sm">Next, confirm dosage form and strength.</h3>
 
 				<div class="clearfix padder-md text-md m-t-md m-b-md">
-					<span class="col-md-5 col-xs-3 text-bold text-ellipsis">Name</span>
-					<span class="col-md-4 col-xs-3 text-bold text-ellipsis">Dosage Form</span>
-					<span class="col-md-3 col-xs-3 text-bold text-ellipsis">Strength</span>
+					<span class="col-md-5 col-xs-4 text-bold text-ellipsis">Name</span>
+					<span class="col-md-4 col-xs-4 text-bold text-ellipsis">Dosage Form</span>
+					<span class="col-md-3 col-xs-4 text-bold text-ellipsis">Strength</span>
 				</div>
 			</div>
 			<div class="body-result">
 				<div class="m-t-xl">
 					<div class="result b-b text-md clickable text-ellipsis" ng-click="step2(select)" ng-repeat="select in choosen">
-						<span class="col-md-5 col-xs-3 text-ellipsis">{{select.name}}</span>
-						<span class="col-md-4 col-xs-3 text-ellipsis capitalize">{{select.form}}</span>
-						<span class="col-md-3 col-xs-3 text-ellipsis">
+						<span class="col-md-5 col-xs-4 text-ellipsis">{{select.name}}</span>
+						<span class="col-md-4 col-xs-4 text-ellipsis capitalize">{{select.form}}</span>
+						<span class="col-md-3 col-xs-4 text-ellipsis">
 							<p ng-if="select.strength">{{select.strength}}</p>
 							<p ng-if="!select.strength">-</p>
 						</span>
