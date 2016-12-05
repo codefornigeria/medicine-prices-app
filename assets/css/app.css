@@ -494,6 +494,11 @@ a {
 .overlay-dark h3 {
   font-size: 40px;
 }
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .overlay-dark h3 {
+    font-size: 20px !important;
+  }
+}
 .overlay-dark .second {
   width: 80%;
   margin: 0 auto;
@@ -578,12 +583,28 @@ a {
 .x-ng-cloak {
   display: none !important;
 }
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .typing {
+    font-size: 25px;
+  }
+}
+@media all and (min-width: 250px) and (max-width: 640px) {
+  .typing {
+    font-size: 25px;
+  }
+}
 .typing p:nth-of-type(1) {
   font-weight: 300 !important;
 }
 @media all and (min-width: 320px) and (max-width: 640px) {
   .typing p:nth-of-type(1) {
-    font-size: 30px;
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
+@media all and (min-width: 250px) and (max-width: 640px) {
+  .typing p:nth-of-type(1) {
+    font-size: 25px;
     margin-bottom: 20px;
   }
 }

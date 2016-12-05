@@ -591,6 +591,10 @@ a {
 
 	h3 {
 		font-size: 40px;
+
+		@media @mobile {
+			font-size: 20px !important;
+		}
 	}
 
 	.second {
@@ -688,11 +692,21 @@ a {
 }
 
 .typing {
+	@media @mobile {
+		font-size: 25px;
+	}
+	@media @mobile-custom {
+		font-size: 25px;
+	}
 	p {
 		&:nth-of-type(1) {
 			font-weight: 300 !important;
 			@media @mobile {
-				font-size: 30px;
+				font-size: 25px;
+				margin-bottom: 20px;
+			}
+			@media @mobile-custom {
+				font-size: 25px;
 				margin-bottom: 20px;
 			}
 		}
