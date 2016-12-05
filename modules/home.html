@@ -59,7 +59,7 @@
 		<h3 class="text-fade text-thin" ng-if="!loaded">Calculating...</h3>
 		<div class="" ng-cloak>
 
-			<h2 class="m-b-md intro animated fadeIn" ng-if="loaded">The global average price for {{credentials.name}}, {{credentials.form}}, {{credentials.strength}} is &#8358;{{credentials.realPrice}}.</h2>
+			<h2 class="m-b-md intro animated fadeIn" ng-if="loaded">The global average price for {{credentials.name}}, {{credentials.form}}, {{credentials.strength}} is &#8358;{{credentials.realPrice | number}}.</h2>
 			<h3 class="typing m-b-lg" ng-show="loaded">{{typing}}</h3>
 			<div ng-if="shout" class="animated animate-slow fadeIn">
 				<p class="call2action">Tell the world :)</p>
