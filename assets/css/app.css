@@ -5,12 +5,16 @@
 }
 body {
   background: #FFF;
+  color: #666666;
 }
 .none {
   display: none;
 }
 a {
   color: inherit;
+}
+h3 {
+  color: #666666;
 }
 .tool-bar {
   height: 100px;
@@ -70,7 +74,7 @@ a {
 .hero .header {
   font-size: 50px;
   font-weight: 900;
-  color: #0B5D97;
+  color: #666666;
 }
 @media all and (min-width: 320px) and (max-width: 640px) {
   .hero .header {
@@ -80,7 +84,7 @@ a {
 .hero .sub-header {
   font-size: 24px;
   font-weight: 500;
-  color: #000000;
+  color: #666666;
 }
 @media all and (min-width: 320px) and (max-width: 959px) {
   .hero .sub-header {
