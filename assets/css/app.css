@@ -571,3 +571,10 @@ a {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.data-sources {
+  list-style: none;
+}
+.data-sources a {
+  margin-left: 15px;
+  color: #337ab7;
+}
