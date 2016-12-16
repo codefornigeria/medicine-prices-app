@@ -15,10 +15,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 p-t-lg">
-				<p class="sub-header text-bold">
+				<p class="sub-header sub">
 					According to a 2006 report of the Ministry of Health, medicines are unaffordable to the majority of Nigerians (90.2%) who live below the income level of 2 USD a day as well as the government worker that earns a minimum wage of 1.4 USD per day.
 				</p>
-				<p class="sub-header text-bold">
+				<p class="sub-header sub">
 					10 years later, the story is not different. This tool is intended to call the attention of policy makers to the soaring cost of medicines in Nigeria.
 				</p>
 				<p class="header p-t-sm">What should your medicine cost?</p>
@@ -32,8 +32,10 @@
 			<p class="fa fa-angle-down"></p>
 		</div>
 </div>
-	<div class="min500 gradient" id="main" ng-show="showCard">
-		<div class="ghost-line" ng-hide="two"></div>
+	<div class="min500 gradient" id="main" >
+		<div class="ghost-line" ng-show="showCard"></div>
+		<div class="animated fadeInUp " ng-show="showCard">
+			
 		<div class="card z-index4" ng-hide="one">
 			<form name="priceForm">
 				<div class="body">
@@ -77,6 +79,7 @@
 
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<div class="overlay overlay-dark text-center" ng-show="personNode">

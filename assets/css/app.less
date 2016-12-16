@@ -122,6 +122,11 @@ a {
 		font-weight: 900;
 		color: #0B5D97;
 
+		@media @tablet {
+			width: 70%;
+			margin: auto;
+		}
+
 		@media @mobile {
 			font-size: 24px;
 		}
@@ -129,7 +134,7 @@ a {
 
 	.sub-header {
 		font-size: 18px;
-		font-weight: 500;
+		font-weight: 300;
 		color: #000000;
 
 		@media @tablet {
@@ -697,5 +702,17 @@ a {
 	a {
 		margin-left: 15px;
 		color: #337ab7;
+	}
+}
+.sub {
+	font-weight: 400 !important;
+	color: #999 !important;
+}
+
+.min500{
+	min-height: 70vh;
+
+	@media @tablet {
+		min-height: 140vh !important;
 	}
 }

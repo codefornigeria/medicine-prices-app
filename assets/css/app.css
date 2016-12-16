@@ -73,6 +73,12 @@ a {
   font-weight: 900;
   color: #0B5D97;
 }
+@media all and (min-width: 320px) and (max-width: 959px) {
+  .hero .header {
+    width: 70%;
+    margin: auto;
+  }
+}
 @media all and (min-width: 320px) and (max-width: 640px) {
   .hero .header {
     font-size: 24px;
@@ -80,7 +86,7 @@ a {
 }
 .hero .sub-header {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 300;
   color: #000000;
 }
 @media all and (min-width: 320px) and (max-width: 959px) {
@@ -577,4 +583,16 @@ a {
 .data-sources a {
   margin-left: 15px;
   color: #337ab7;
+}
+.sub {
+  font-weight: 400 !important;
+  color: #999 !important;
+}
+.min500 {
+  min-height: 70vh;
+}
+@media all and (min-width: 320px) and (max-width: 959px) {
+  .min500 {
+    min-height: 140vh !important;
+  }
 }
