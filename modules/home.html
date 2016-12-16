@@ -1,30 +1,12 @@
-<nav class="b-b">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 tool-bar no-padder">
-				<a href="http://www.codefornigeria.org"><img src="assets/img/logo.png" class="logo"></a>
-				<a href="https://twitter.com/codefornigeria" target="_blank"><li class="fa fa-twitter"></li></a>
-				<a href="https://web.facebook.com/codefornigeria" target="_blank"><li class="fa fa-facebook"></li></a>
-				<li class="b-r divider"></li>
-				<li>Get in touch</li>
-				<li>Faqs</li>
-			</div>
+
+	<div class="hero">
+		<div class="col-md-10 col-md-offset-1 p-t-md text-center">
+			<p class="col-md-10 col-md-offset-1 sub-header p-t-sm">
+				You might be paying too much for life saving drugs, let’s find out.
+			</p>
 		</div>
 	</div>
-</nav>
-<div class="hero">
-	<div class="col-md-10 col-md-offset-1 p-t-lg text-center">
-		<p class="header">What should your medicine cost?</p>
-		<p class="col-md-10 col-md-offset-1 sub-header p-t-sm">
-			You might be paying too much for life saving drugs, let’s find out.</p>
-		</div>
-		<div class="col-md-8 col-md-offset-2 text-center m-t-xxl action animated animate-slow pulse infinite">
-			<p class="clickable" ng-click="scrollTo('main')">Start</p>
-			<p class="fa fa-angle-down"></p>
-		</div>
-	</div>
-	<div class="min500 gradient" id="main">
-		<div class="ghost-line" ng-hide="two"></div>
+	<div class="gradient" id="main">
 		<div class="card z-index4" ng-hide="one">
 			<form name="priceForm">
 				<div class="body">
@@ -49,17 +31,17 @@
 				<h3 class="text-center m-b-sm">Next, confirm dosage form and strength.</h3>
 
 				<div class="clearfix padder-md text-md m-t-md m-b-md">
-					<span class="col-md-5 text-bold text-ellipsis">Name</span>
-					<span class="col-md-4 text-bold text-ellipsis">Dosage Form</span>
-					<span class="col-md-3 text-bold text-ellipsis">Strength</span>
+					<span class="col-md-5 col-xs-4 text-bold text-ellipsis">Name</span>
+					<span class="col-md-4 col-xs-4 text-bold text-ellipsis">Dosage Form</span>
+					<span class="col-md-3 col-xs-4 text-bold text-ellipsis">Strength</span>
 				</div>
 			</div>
 			<div class="body-result">
 				<div class="m-t-xl">
 					<div class="result b-b text-md clickable text-ellipsis" ng-click="step2(select)" ng-repeat="select in choosen">
-						<span class="col-md-5 col-xs-3 text-ellipsis">{{select.name}}</span>
-						<span class="col-md-4 col-xs-3 text-ellipsis capitalize">{{select.form}}</span>
-						<span class="col-md-3 col-xs-3 text-ellipsis">
+						<span class="col-md-5 col-xs-4 text-ellipsis">{{select.name}}</span>
+						<span class="col-md-4 col-xs-4 text-ellipsis capitalize">{{select.form}}</span>
+						<span class="col-md-3 col-xs-4 text-ellipsis">
 							<p ng-if="select.strength">{{select.strength}}</p>
 							<p ng-if="!select.strength">-</p>
 						</span>
@@ -69,40 +51,24 @@
 			</div>
 		</div>
 	</div>
+	<p class="text-center credit">
+		Built by Code for Nigeria with support from <a href="http://icfj.org">ICFJ</a> and <a href="http://codeforafrica.org">Code for Africa</a>.
+	</p>
 
 	<div class="overlay overlay-dark text-center" ng-show="personNode">
 		<h3 class="text-fade text-thin" ng-if="!loaded">Calculating...</h3>
 		<div class="" ng-cloak>
 
-			<h2 class="m-b-md intro animated fadeIn" ng-if="loaded">The global average price for {{credentials.name}}, {{credentials.form}}, {{credentials.strength}} is &#8358;{{credentials.realPrice}}.</h2>
+			<h2 class="m-b-md intro animated fadeIn" ng-if="loaded">The global average price for {{credentials.name}}, {{credentials.form}}, {{credentials.strength}} is &#8358;{{credentials.realPrice | number:2}}.</h2>
 			<h3 class="typing m-b-lg" ng-show="loaded">{{typing}}</h3>
 			<div ng-if="shout" class="animated animate-slow fadeIn">
 				<p class="call2action">Tell the world :)</p>
 
-				<a class="animated animate-slow fadeIn" href="https://twitter.com/intent/tweet?text=Hello world, I am paying {{outcome}} percent of the global average price for {{credentials.name}}!&url=http://medicine-prices.herokuapp.com&hashtags=fixmedprices" target="_blank" ng-if="social"><i class="fa fa-twitter fa-3x animated animate-slow pulse infinite text-center"></i></a>
+				<a class="animated animate-slow fadeIn" href="https://twitter.com/intent/tweet?text=Hello world, I am paying {{outcome}} percent of the global average price for {{credentials.name}}!&hashtags=fixmedprices&url=http://medicine-prices.herokuapp.com" target="_blank" ng-if="social"><i class="fa fa-twitter fa-3x animated animate-slow pulse infinite text-center"></i></a>
 				<p class="assumption" ng-if="social">Assumption: $1 = &#8358;304</p>
 				<p class="clickable text-bold go-back" ng-click="close()" ng-if="goBack"><i class="fa fa-long-arrow-left"></i> Check something else</p>
 			</div>
 		</div>
 	</div>
+	
 
-
-	<div class="footer">
-		<div class="col-md-8">
-			<p class="footer-header">About</p>
-			<hr>
-			Code for Nigeria is a non-profit civic technology movement. A network of civic-minded volunteers who contribute their talents, skills, expertise, and community knowledge as technological tools to improve public service, bring governments to account, and promote informed (data-driven) decision-making; leveraging open data + media, and backed by a core (full-time) tech team.
-		</div>
-		<div class="col-md-4 p-t">
-			<p class="clickable"><i class="fa fa-facebook-square"></i><a href="http://facebook.com/codefornigeria" target="_blank"> Like us on Facebook</a></p>
-			<p class="clickable"><i class="fa fa-twitter-square"></i><a href="http://twitter.com/codefornigeria" target="_blank"> Follow us on Twitter</a></p>
-		</div>
-		<div class="col-md-12 partners">
-			<p class="footer-header">Built by Code for Nigeria, with thought leadership from</p>
-			<hr>
-			<a href="http://www.icfj.org" target="_blank"><img src="assets/img/icfj.png"></a>
-			<a href="http://www.codeforafrica.org" target="_blank"><img src="assets/img/cfafrica.png"></a>
-		</div>
-
-		<p class="text-center text-sm text-thin"><a href="https://github.com/codefornigeria/medicine-prices-ui" target="_blank">Fork this project on Github</a></p>
-	</div>
