@@ -5,7 +5,9 @@ angular.module('app', [
     'restangular',
     'ui.bootstrap',
     'app.controllers',
-    'angular-typed'
+    'angular-typed',
+    'angulartics',
+    'angulartics.google.tagmanager'
     ])
 
 .config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider',
@@ -19,7 +21,7 @@ angular.module('app', [
         controller: 'appCtrl'
     })
 
-      $urlRouterProvider.otherwise('/404')  
+      $urlRouterProvider.otherwise('/404')
   }])
 
 .directive('ngEnter', function () {
@@ -36,12 +38,12 @@ angular.module('app', [
 })
 
 .service('anchorSmoothScroll', function(){
-    
+
     this.scrollTo = function(eID) {
 
-        // This scrolling function 
+        // This scrolling function
         // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
-        
+
         var startY = currentYPosition();
         var stopY = elmYPosition(eID);
         var distance = stopY > startY ? stopY - startY : startY - stopY;
@@ -63,7 +65,7 @@ angular.module('app', [
             setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
             leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
         }
-        
+
         function currentYPosition() {
             // Firefox, Chrome, Opera, Safari
             if (self.pageYOffset) return self.pageYOffset;
@@ -74,7 +76,7 @@ angular.module('app', [
             if (document.body.scrollTop) return document.body.scrollTop;
             return 0;
         }
-        
+
         function elmYPosition(eID) {
             var elm = document.getElementById(eID);
             var y = elm.offsetTop;
@@ -86,5 +88,5 @@ angular.module('app', [
         }
 
     };
-    
+
 })
