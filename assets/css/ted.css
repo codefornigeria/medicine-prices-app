@@ -154,7 +154,7 @@
 }
 
 .text-bold {
-	font-weight: 700;
+	font-weight: 600 !important;
 }
 
 .text-thin {
@@ -162,7 +162,7 @@
 }
 
 .min500{
-	min-height: 85vh;
+	min-height: 70vh;
 }
 
 h1, h2, h3, h4, h5, h6 {

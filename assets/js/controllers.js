@@ -13,6 +13,7 @@ angular.module('app.controllers', ['ngAnimate'])
     }
     
 	$scope.scrollTo = function(eID) {
+        $scope.showCard = true;
 		$location.hash('main');
         anchorSmoothScroll.scrollTo(eID);
 	    // $anchorScroll();
