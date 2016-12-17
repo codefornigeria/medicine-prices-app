@@ -7,7 +7,7 @@ angular.module('app', [
     'app.controllers',
     'angular-typed',
     'angulartics',
-    'angulartics.google.tagmanager'
+  'angulartics.google.analytics'
     ])
 
 .config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider',
