@@ -615,7 +615,7 @@ a {
 }
 @media all and (min-width: 320px) and (max-width: 959px) {
   .min500 {
-    min-height: 80vh !important;
+    min-height: 140vh !important;
   }
 }
 @media all and (min-width: 320px) and (max-width: 640px) {
