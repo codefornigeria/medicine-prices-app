@@ -158,7 +158,7 @@
 }
 
 .text-thin {
-	font-weight: 400;
+	font-weight: normal !important;
 }
 
 .min500{

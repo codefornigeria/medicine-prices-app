@@ -86,7 +86,7 @@
 		<h3 class="text-fade text-thin" ng-if="!loaded">Calculating...</h3>
 		<div class="" ng-cloak>
 
-			<h2 class="m-b-md intro animated fadeIn" ng-if="loaded">The global average price for {{credentials.name}}, {{credentials.form}}, {{credentials.strength}} is &#8358;{{credentials.realPrice}}.</h2>
+			<h2 class="m-b-md intro animated fadeIn" ng-if="loaded">The global average price for {{credentials.name}}, {{credentials.form}}, {{credentials.strength}} is <span class="text-thin">&#8358;{{credentials.realPrice | number:2}}</span>.</h2>
 			<h3 class="typing m-b-lg" ng-show="loaded">{{typing}}</h3>
 			<div ng-if="shout" class="animated animate-slow fadeIn">
 				<p class="call2action">Tell the world :)</p>
@@ -104,11 +104,11 @@
 			<hr>
 			Code for Nigeria is a non-profit civic technology movement. A network of civic-minded volunteers who contribute their talents, skills, expertise, and community knowledge as technological tools to improve public service, bring governments to account, and promote informed (data-driven) decision-making; leveraging open data + media, and backed by a core (full-time) tech team.
 		</div>
-		<div class="col-md-4 p-t">
+		<div class="col-md-4 p-t min150">
 			<p class="clickable"><i class="fa fa-facebook-square"></i><a href="http://facebook.com/codefornigeria" target="_blank"> Like us on Facebook</a></p>
 			<p class="clickable"><i class="fa fa-twitter-square"></i><a href="http://twitter.com/codefornigeria" target="_blank"> Follow us on Twitter</a></p>
 		</div>
-		<div class="col-md-12">
+		<div class="col-md-12 min150">
 			<p class="footer-header">Data sources </p>
 			<hr>
 			<ul class="data-sources">

@@ -128,6 +128,7 @@ a {
 		}
 
 		@media @mobile {
+			width: 100%;
 			font-size: 24px;
 		}
 	}
@@ -168,6 +169,10 @@ a {
   top: -30px;
   left: 0;
   right: 0;
+
+  @media @tablet {
+  	height: 20%;
+  }
 }
 
 .action {
@@ -665,6 +670,9 @@ a {
 
 .typing {
 	p {
+		span {
+			font-weight: normal !important;
+		}
 		&:nth-of-type(1) {
 			font-weight: 300 !important;
 			@media @mobile {
@@ -700,13 +708,21 @@ a {
 	list-style: none;
 
 	a {
-		margin-left: 15px;
 		color: #337ab7;
 	}
 }
 .sub {
 	font-weight: 400 !important;
 	color: #999 !important;
+}
+
+.min150 {
+	min-height: 150px !important;
+
+	@media @mobile {
+		min-height: 100px !important;
+	}
+
 }
 
 .min500{

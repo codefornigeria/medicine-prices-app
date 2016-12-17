@@ -81,6 +81,7 @@ a {
 }
 @media all and (min-width: 320px) and (max-width: 640px) {
   .hero .header {
+    width: 100%;
     font-size: 24px;
   }
 }
@@ -118,6 +119,11 @@ a {
   top: -30px;
   left: 0;
   right: 0;
+}
+@media all and (min-width: 320px) and (max-width: 959px) {
+  .ghost-line:after {
+    height: 20%;
+  }
 }
 .action {
   color: #009925;
@@ -551,6 +557,9 @@ a {
 .x-ng-cloak {
   display: none !important;
 }
+.typing p span {
+  font-weight: normal !important;
+}
 .typing p:nth-of-type(1) {
   font-weight: 300 !important;
 }
@@ -581,12 +590,19 @@ a {
   list-style: none;
 }
 .data-sources a {
-  margin-left: 15px;
   color: #337ab7;
 }
 .sub {
   font-weight: 400 !important;
   color: #999 !important;
+}
+.min150 {
+  min-height: 150px !important;
+}
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .min150 {
+    min-height: 100px !important;
+  }
 }
 .min500 {
   min-height: 70vh;
