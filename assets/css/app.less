@@ -51,7 +51,7 @@ a {
 
 @mobile: ~"all and (min-width: 320px) and (max-width: 640px)";
 @tablet: ~"all and (min-width: 320px) and (max-width: 959px)";
-@custom: ~"all and (min-width: 320px) and (max-width: 1024px)";
+@custom: ~"all and (min-width: 357px) and (max-width: 667px) and (orientation: landscape)";
 @desktop: ~"all and (min-width: 960px)";
 
 .tool-bar {
@@ -172,6 +172,7 @@ a {
 
   @media @tablet {
   	height: 20%;
+  	top: -20px;
   }
 }
 
@@ -717,10 +718,14 @@ a {
 }
 
 .min150 {
-	min-height: 150px !important;
+	min-height: 100px !important;
+
+	@media @tablet {
+		min-height: 80px !important;
+	}
 
 	@media @mobile {
-		min-height: 100px !important;
+		min-height: 80px !important;
 	}
 
 }
@@ -729,6 +734,11 @@ a {
 	min-height: 70vh;
 
 	@media @tablet {
-		min-height: 140vh !important;
+		min-height: 80vh !important;
 	}
+
+	@media @mobile {
+		min-height: 100vh !important;
+	}
+
 }
